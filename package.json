@@ -1,0 +1,11 @@
+{
+  "name": "mosquitto_to_rabbit",
+  "version": "1.0.0",
+  "description": "mosquitto mqqt broker and rabbit",
+  "author": "CesarF",
+  "dependencies": {
+    "mqtt": "^1.7.3",
+    "mqtt-cli": "^0.2.4",
+    "amqplib":"*"
+  }
+}
