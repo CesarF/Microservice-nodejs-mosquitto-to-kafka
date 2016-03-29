@@ -1,11 +1,13 @@
 {
-  "name": "mosquitto_to_rabbit",
+  "name": "mosquitto_to_broker",
   "version": "1.0.0",
-  "description": "mosquitto mqqt broker and rabbit",
+  "description": "mosquitto mqtt broker to rabbit and kafka",
   "author": "CesarF",
   "dependencies": {
     "mqtt": "^1.7.3",
-    "mqtt-cli": "^0.2.4",
-    "amqplib":"*"
+    "amqplib":"*",
+    "kafka": "^0.2.3",
+    "kafka-node": "^0.3.2",
+    "no-kafka": "^2.0.8"
   }
 }
