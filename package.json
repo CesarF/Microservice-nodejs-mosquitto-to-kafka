@@ -6,8 +6,7 @@
   "dependencies": {
     "mqtt": "^1.7.3",
     "amqplib":"*",
-    "kafka": "^0.2.3",
-    "kafka-node": "^0.3.2",
-    "no-kafka": "^2.0.8"
+    "no-kafka": "*",
+    "redis":"*"
   }
 }
