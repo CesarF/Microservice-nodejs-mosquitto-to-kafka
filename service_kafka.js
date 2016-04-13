@@ -33,6 +33,10 @@ function startReceiverMosquitto(){
 }
 
 function validateData(jsonCall){
+    if(!jsonCall.timestamp){
+      var d = new Date();
+      jsonCall["timestamp"]= d.getTime();
+    }
     clientRedis.get(jsonCall.type, function(err, reply) {
         // reply is null when the key is missing
         console.log("topics type "+reply);
@@ -86,7 +90,7 @@ function publishKafka(topic, message){
 function startRedis(){
     console.log("save data in redis")
     clientRedis.set("collar", "gps,temperature,batch");
-    clientRedis.set("gps", "lat,log");
-    clientRedis.set("temperature", "grados");
-    clientRedis.set("batch", "lat,log,grados");
+    clientRedis.set("gps", "lat,log,timestamp");
+    clientRedis.set("temperature", "grados,timestamp");
+    clientRedis.set("batch", "lat,log,grados,timestamp");
 }
