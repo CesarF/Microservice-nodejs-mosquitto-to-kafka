@@ -77,7 +77,7 @@ function publishKafka(topic, message){
         var strMessage = JSON.stringify(message)
         console.log('sent message to kafka '+strMessage+' in topic '+topic);
         return producer.send({
-            connectionString: '127.0.0.1:9092',
+            connectionString: IP_KAFKA,
             topic: topic,
             partition: 0,
             message: {
