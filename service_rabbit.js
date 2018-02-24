@@ -3,8 +3,8 @@ var mqtt    = require('mqtt');
 
 var client  = mqtt.connect('mqtt://localhost');
 var channel = null
-  console.log(" Connecting to rabbit");
-amqp.connect('amqp://localhost', function(err, conn) {
+console.log(" Connecting to rabbit");
+amqp.connect('amqp://'+PASSWD+':'+USER+'@'+IP_RABBIT+':'+RABBIT_PORT, function(err, conn) {
      conn.createChannel(function(err, ch) {
         channel = ch
         console.log(" Connected to rabbit");
