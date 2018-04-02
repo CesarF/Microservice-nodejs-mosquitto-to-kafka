@@ -1,6 +1,6 @@
 var mqtt    = require('mqtt');
 var client  = mqtt.connect('mqtt://localhost');
-var Kafka = require('no-kafka');
+var Kafka   = require('no-kafka');
 var producer = new Kafka.Producer();
 var redis = require("redis"),
     clientRedis = redis.createClient();
@@ -12,6 +12,7 @@ clientRedis.on("error", function (err) {
 startRedis()
 
 console.log('start service');
+// Connection to topic gps in mosquitto
 client.on('connect', function () {
     client.subscribe('gps');
     console.log('connected to mosquitto');
